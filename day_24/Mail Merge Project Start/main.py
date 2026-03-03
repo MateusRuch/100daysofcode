@@ -19,6 +19,9 @@ for name in names_list:
         letter = letter_path.read()
 
     correct_letter = letter.replace("[name]",name)
-    print (correct_letter)
+    
+    file_name = f"letter_for_{name}.txt"
+    with open (f"./Mail Merge Project Start/OutPut/{file_name}", "w") as sending_letter_path:
+        sending_letter_path.write(correct_letter)
 
 
