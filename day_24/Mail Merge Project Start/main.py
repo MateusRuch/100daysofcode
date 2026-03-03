@@ -8,8 +8,17 @@
     #Hint2: This method will also help you: https://www.w3schools.com/python/ref_string_replace.asp
         #Hint3: THis method will help you: https://www.w3schools.com/python/ref_string_strip.asp
 
-with open("./Mail Merge Project Start/Input/Names/invited_names.txt", "r") as names:
-    names_list = names.readlines()
+with open("./Mail Merge Project Start/Input/Names/invited_names.txt", "r") as names_path:
+    names_list = names_path.readlines()
 
-for i in names_list:
-    print
+    
+
+for name in names_list:
+    name = name.strip() # é necessário atribuir a uma variável para salva-lo.
+    with open("./Mail Merge Project Start/Input/Letters/starting_letter.txt") as letter_path:
+        letter = letter_path.read()
+
+    correct_letter = letter.replace("[name]",name)
+    print (correct_letter)
+
+
